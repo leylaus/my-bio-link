@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exclusive Link</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f0f;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .link-card {
+      background: #1a1a1a;
+      padding: 20px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 18px;
+      display: inline-block;
+    }
+
+    .link-card:hover {
+      background: #292929;
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .overlay-content {
+      background: #1a1a1a;
+      padding: 30px 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .overlay-content p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .overlay-content button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #e91e63;
+      color: white;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .overlay-content button:hover {
+      background-color: #c2185b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="link-card" onclick="showOverlay('https://lovelygirlshere.com/Jgy1yjrD?aid=ghbhxdhaa&kid=gzgzzagaaaa')">
+      🚀 Exclusive Content
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div class="overlay-content">
+      <p>Are you sure you want to open this exclusive content?</p>
+      <button onclick="goToLink()">Yes, open it</button>
+      <button onclick="closeOverlay()">No, go back</button>
+    </div>
+  </div>
+
+  <script>
+    let targetLink = "";
+
+    function showOverlay(link) {
+      targetLink = link;
+      document.getElementById("overlay").style.display = "flex";
+    }
+
+    function closeOverlay() {
+      document.getElementById("overlay").style.display = "none";
+    }
+
+    function goToLink() {
+      window.location.href = targetLink;
+    }
+  </script>
+
+</body>
+</html>
